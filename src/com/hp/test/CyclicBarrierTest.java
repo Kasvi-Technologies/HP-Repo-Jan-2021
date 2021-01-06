@@ -28,11 +28,20 @@ class CBThread extends Thread {
 	
 }
 
+ class MyRunnable1 implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("common business logic for all threads..");
+	}
+	
+}
 public class CyclicBarrierTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		CyclicBarrier barrier1 = new CyclicBarrier(3);
+		CyclicBarrier barrier1 = new CyclicBarrier(2, new MyRunnable1());
 		
 		CBThread cBThread = new CBThread(barrier1);
 		CBThread cBThread1 = new CBThread(barrier1);
