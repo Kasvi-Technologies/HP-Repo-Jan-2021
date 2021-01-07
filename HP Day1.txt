@@ -1,0 +1,258 @@
+Business process  20 mins 30 mins  
+
+2 or 3 days
+
+1 			501				1000
+
+
+500			1000			1500
+
+
+
+Threads   -> parallel processing
+
+2 ways to create a thread 
+
+	1. Thread  class
+		run() method - > business logic which needs to be executed in background or achieve parallel processing
+		start() method -> which is responsible to start your threads in background i.e calling run method
+	2. Runnable interface
+
+
+class MyThread extends Thread {
+
+
+	run(){
+	}
+	
+
+
+}
+
+
+class MyThread implements Runable {
+
+	run(){
+	}
+
+}
+
+
+
+MyThread1   						  MyThread2
+
+1										100
+
+
+
+
+
+50										150	
+threadUtility.display()					threadUtility.display()
+
+
+in some scenarios,  both threads can access the display method at same time
+
+
+
+
+100										200
+
+
+
+
+t1 ->    threadUtility   ->  display
+
+t2 ->   threadUtility -> display 1()   -> it will be blocked until t1 completes the display method
+
+
+t2  -> threadUtility  -> display2 () -> no need to wait for the object to unlock, since it does not have synchronized 
+
+
+
+
+
+
+t1   -> threadUtility1   -> display method  (lock on this instance)  
+
+
+t2 -> threadUtility2   -> display1 method (lock on this instance and continue)    
+
+
+
+wait and notify -> are used for inter thread communication
+when ever we call wait., it releases the lock on clling object and so other threads has the opportunity to call another synchronized 
+method to call notify
+
+
+						Deadlock
+						
+						
+t1 															t2
+
+
+	obtains the lock on account1						obtained the lock on account2
+	
+	......												...........
+	......												...........
+	........											...........
+	
+	wants to get the lock on account2 					want to obtain the lock on accoun1
+	
+	
+	
+
+
+dead lock -> both threads cant continue further
+
+
+samurai.jar to analyze thread dumps
+IBM Thread analyzer
+
+
+jstack <pid>   -> to create the thread dump
+
+
+
+Producer and consumer problem
+
+
+wait and notify
+
+the same concept of wait and notify is ahieved using BlockingQueue
+
+
+	put -> place the information 
+	take -> used to retrive the information
+	
+
+Runnable interfaces
+
+CountDownLatch
+
+	initially we can specify count
+	
+	
+	5
+	
+	t1 (cdl)					t2	(cdl)		t3			t4
+	
+	
+	cdl.awaits						.countDown()
+	
+									.countdown()
+									
+									.countdown()				
+									
+																.countdown()
+													
+
+													.coundwon()
+
+
+
+
+CyclicBarrier (3)
+
+
+t1									t2 										t3
+
+.....								.......
+barrier	awit						awaits
+
+.........								...................
+
+
+......................														
+....
+
+...
+
+
+
+Executor Threads
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
