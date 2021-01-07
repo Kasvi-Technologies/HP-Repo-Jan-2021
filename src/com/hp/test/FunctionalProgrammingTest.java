@@ -2,7 +2,9 @@ package com.hp.test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 interface Vehicle {
 	
@@ -52,6 +54,24 @@ public class FunctionalProgrammingTest {
 		
 		List strLst1 = strLst.stream().filter(str1 -> str1.length() >2).collect(Collectors.toList());
 		System.out.println(strLst1);
+		
+		
+		Stream<String> strListStream = strLst.stream();
+		System.out.println("using forEach...");
+		strListStream.forEach(s -> {
+			System.out.println(s);
+			});
+		
+		strLst.stream().filter(s -> s.equals("hi")).count();
+		Set<String> set= strLst.stream().collect(Collectors.toSet());
+		System.out.println("using set foreach");
+		
+		set.parallelStream().forEach(s -> System.out.println(s));
+		
+		//Method references
+		
+		set.parallelStream().forEach(System.out::println);
+		
 	}
 
 }
