@@ -5,12 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-import org.hibernate.sql.ordering.antlr.GeneratedOrderByFragmentRendererTokenTypes;
 
 @Entity
 @Table(name="Product")
+@NamedQuery(query = "select p from Product p where id > :id" , name="find products based on id")
 public class Product {
 	
 	public Product() {
