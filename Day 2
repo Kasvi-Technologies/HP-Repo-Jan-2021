@@ -98,7 +98,40 @@ Table per concrete class
 	expmonth
 	
 	
+
+Hibernate entity Mappings
+
+An object can contain reference of another object 
+
+One to one 
+
+	Product class is havind reference of productDetail
+
+Many to one 
+
+	Employee and depatclass
 	
+	Many employees can have single department
+	
+	
+One to many
+
+	student contains multiple address
+
+Many to many
+
+	Infosys
+	TCS
+ 
+Person A     INFY and TCS
+Person B     INFY and TCS
+
+Person C      Reliance, INFY
+
+
+
+
+
 
 
 
