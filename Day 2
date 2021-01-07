@@ -1,0 +1,122 @@
+Day 2:
+
+Product clas
+	id  int
+	
+	name string
+	
+	price  double
+	
+	
+
+create a list with 5 products
+
+	1. using streams, disply products whose price greater than 5000 
+	
+	2. using streams, disply products whose name equas vehicle
+	
+	3. using streams count of products
+	
+
+HIbernate 
+
+ORM framework 
+
+Object     Relational Mapping tool
+
+
+Product class						Product table
+
+	id									product_id
+	
+	name								name	
+	
+	price								price
+
+
+
+
+HIbernate inheritance mappings
+
+Table per class hierarchy
+
+	entire class hirerchy has single table
+
+JOined sub Class
+
+	Parent class Pk						child class fk
+
+Table per concrete class
+
+	each child class is having its own table including parent class properties
+
+
+
+				Account
+				
+				id 
+				name
+				
+
+BankAccount							Creditcard
+
+	amount								expmonth
+	type								expyear
+
+
+
+
+Joned sub class tables
+
+Account						BankAccount						Creditcard
+
+id								amount							expyear
+name							type							expmonth
+								id								id
+
+
+
+
+Table per concrete class
+
+	each child class is having its own table including parent class properties
+	
+	
+	BankAccount
+	id
+	name
+	type
+	amount
+	
+	
+	
+	
+	creditcard
+	id
+	name
+	expyear
+	expmonth
+	
+	
+	
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
