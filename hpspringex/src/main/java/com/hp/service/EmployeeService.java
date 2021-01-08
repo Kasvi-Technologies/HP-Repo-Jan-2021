@@ -1,5 +1,7 @@
 package com.hp.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.hp.beans.Employee;
 import com.hp.dao.EmployeeDAO;
 
@@ -11,12 +13,14 @@ public class EmployeeService {
 		// TODO Auto-generated constructor stub
 	}
 
+	//@Autowired
 	public EmployeeService(EmployeeDAO employeeDAO) {
 		super();
 		System.out.println("calling construcor based DI");
 		this.employeeDAO = employeeDAO;
 	}
 
+	@Autowired
 	private EmployeeDAO employeeDAO;
 
 	public EmployeeDAO getEmployeeDAO() {
