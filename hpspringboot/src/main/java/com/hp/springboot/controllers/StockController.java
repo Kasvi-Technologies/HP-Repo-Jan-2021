@@ -2,10 +2,10 @@ package com.hp.springboot.controllers;
 
 
 
+import javax.websocket.server.PathParam;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,19 +22,6 @@ public class StockController {
 		return "Hi...." + stockid;
 	}
 
-	@GetMapping (path="/{stockid}",  consumes = {MediaType.APPLICATION_XML_VALUE,
-            MediaType.APPLICATION_JSON_VALUE} , produces= {MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_JSON_VALUE})		
-	public String getStockById(@PathVariable(name = "stockid") int stockid) {
-		return "Hi using path param...." + stockid;
-	}
 	
-	@GetMapping (path="/{stockid}/person/{personid}",  consumes = {MediaType.APPLICATION_XML_VALUE,
-            MediaType.APPLICATION_JSON_VALUE} , produces= {MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_JSON_VALUE})		
-	public String getStockByPersonId(@PathVariable(name = "stockid") int stockid, 
-						@PathVariable(name = "personid") int personid) {
-		return "Hi using path param person also...." + stockid;
-	}
 	
 }
