@@ -1,0 +1,95 @@
+Spring Framework
+
+Inversion of control 
+
+	you no need to create an object explicitly using new operatos . Spring container will automatically provide an instance whenever it required.
+
+
+
+EmployeeController   ->  EmployeeService  ->  Employee DAO   -> save the records Employee
+
+ProductController   ->  ProductService   -> ProductDAO  -> save, find Product
+
+
+					EmployeeDAO
+
+
+
+HPSoftwareEmployeeDAO						HPBPOEmployeeDAO
+
+
+
+
+select e from Student e inner join e.addresses a where a.address_id = 1
+
+select e from Student e inner join e.addresses a where a.city like '%Ban%'
+
+
+							Excercise
+
+1. Create a product class
+
+2. Product Service
+
+3. ProductDAO
+
+4. beans.xml, inject productdao to product service
+
+5. test program to load productservice and call insert ptoduct method..
+
+
+
+
+		Spring and Hibernate
+		
+1. create a maven project
+2. update pom.xml with spring and hibernate jar files
+3. persistence.xml file in meta-inf folder
+4. create an entity classes
+5. create dao and daoimpl classes with repository annotations and entirymanager persistence context annotations
+write all the crud methos
+6. create sevrice classes with service annotation and inject dao class
+7. appconfig
+8. test program
+
+
+
+Excercie
+
+Stock
+
+	id
+	name
+	price
+	
+
+
+StockDAO
+StockDAoIMpl
+
+StockService
+StockServiceImpl
+
+
+StockTest
+
+	insertstocks 
+	fetch the stcks
+
+
+
+Spring Boot 
+	
+	develop micro services
+	
+	
+	
+
+
+
+
+
+
+
+
+
