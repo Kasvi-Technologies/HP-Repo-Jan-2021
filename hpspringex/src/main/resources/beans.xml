@@ -13,4 +13,33 @@
  		<property name="salary" value="20000"/> 		
  	</bean>
  	   
+ 	 <bean id="employee" class="com.hp.beans.Employee">
+ 		<property name="id" value="2"/>
+ 		<property name="name" value="sample2"/>
+ 		<property name="salary" value="40000"/> 		
+ 	</bean>
+ 	
+ 	<!-- 
+ 	EmployeeDAO employeeDAO = new EmployeeDAO ()
+ 	 -->
+ 	
+ 	<bean id="employeeDAO" class="com.hp.dao.EmployeeDAO"/>
+ 	
+ 	<!-- 
+ 	EmployeeService employeeService = new EmployeeService ();
+ 	employeeService.setEmployeeDAO(employeeDAO);
+ 	 -->
+ 	 
+ 	 <!-- Dependency Injection -->
+ 	 <!-- setter based dependency injection -->
+ 	<bean id="employeeService" class="com.hp.service.EmployeeService">
+ 		<property name="employeeDAO" ref="employeeDAO"/>
+ 	</bean>
+ 	
+ 	<!-- Constructor based dependency injection -->
+ 	<bean id="employeeServiceUsingCons" class="com.hp.service.EmployeeService">
+ 			<constructor-arg ref="employeeDAO"/>
+ 	</bean>	
+ 	
+ 	 
 </beans>
